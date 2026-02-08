@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ePayco Test - Todo App
 
-## Getting Started
+Esta es una aplicación de gestión de tareas (Todo App) desarrollada como prueba técnica. El proyecto está construido utilizando **Next.js 13+ (App Router)**, **TypeScript** y **Tailwind CSS**, implementando una arquitectura de componentes basada en **Atomic Design**.
 
-First, run the development server:
+## 🚀 Características
+
+- **Gestión de Tareas (CRUD):**
+  - Crear nuevas tareas.
+  - Listar tareas (con integración a API externa).
+  - Editar el título de las tareas en línea.
+  - Eliminar tareas.
+  - Marcar tareas como completadas/pendientes.
+- **UX Optimista:** La interfaz se actualiza inmediatamente para una mejor experiencia de usuario mientras se procesa la petición en segundo plano.
+- **Diseño Atómico:** Componentes organizados escalablemente en Átomos, Moléculas, Organismos y Plantillas.
+- **UI Moderna:** Estilizado con Tailwind CSS utilizando una paleta de colores personalizada (Dark Theme) y tipografía `Public Sans`.
+
+## 🛠️ Tecnologías Utilizadas
+
+- Next.js - Framework de React para producción.
+- TypeScript - Superset de JavaScript con tipado estático.
+- Tailwind CSS - Framework de utilidades CSS para el diseño.
+- Atomic Design - Metodología para la estructura de componentes.
+
+## 📂 Estructura del Proyecto
+
+El código fuente se encuentra en `src/` y sigue esta organización:
+
+```text
+src/
+├── app/              # Rutas y layouts de Next.js (App Router)
+├── components/       # Componentes de UI
+│   ├── atoms/        # Elementos base (Button, Input, Checkbox, Iconos)
+│   ├── molecules/    # Grupos funcionales (TodoItem, TodoForm)
+│   ├── organisms/    # Secciones complejas (TodoList)
+│   └── templates/    # Estructura de página (TodoTemplate)
+├── services/         # Lógica de comunicación con la API (fetch)
+├── types/            # Definiciones de tipos TypeScript (Interfaces)
+└── ...
+```
+
+## ⚙️ Instalación y Configuración
+
+1.  **Clonar el repositorio:**
+
+    ```bash
+    git clone <url-del-repositorio>
+    cd epayco-test
+    ```
+
+2.  **Instalar dependencias:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Configurar Variables de Entorno:**
+
+    Crea un archivo `.env.local` en la raíz del proyecto y define la URL de la API (por ejemplo, usando JSONPlaceholder):
+
+    ```env
+    NEXT_PUBLIC_API_URL=https://jsonplaceholder.typicode.com/todos
+    ```
+
+4.  **Ejecutar el servidor de desarrollo:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
